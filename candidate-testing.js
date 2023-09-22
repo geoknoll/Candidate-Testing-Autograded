@@ -23,9 +23,7 @@ candidateName = input.question("What is your name?");
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-candidateAnswer = readlineSync(question);
-
-
+candidateAnswer = input.question(question);
 }
 
 function gradeQuiz(candidateAnswers) {
