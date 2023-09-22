@@ -1,4 +1,4 @@
-const input = require('readline-sync');
+const readlineSync = require('readline-sync');
 
 // TODO 2: modify your quiz app to ask 5 questions //
 
@@ -18,12 +18,12 @@ let candidateAnswers;
 
 function askForName() {   
   // TODO 1.1b: Ask for candidate's name //
-candidateName = prompt("What is your name?");
+candidateName = input.question("What is your name?");
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-candidateAnswer = prompt(question);
+candidateAnswer = readlineSync(question);
 
 
 }
