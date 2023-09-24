@@ -10,13 +10,13 @@ let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
 
 //TODO: Variables for Part 2
-let questions = ["Who was the first American woman in space? " , "True or false: 5 kilometer == 5000 meters? " , "(5 + 3)/2 * 10 = ? " , "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? " , "What is the minimum crew size for the ISS? " ];
+let questions = [ "Who was the first American woman in space? " , "True or false: 5 kilometer == 5000 meters? " , "(5 + 3)/2 * 10 = ? " , "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? " , "What is the minimum crew size for the ISS? " ];
 let correctAnswers = [ "Sally Ride" , "true", "40", "Trajectory", "3" ];
 let candidateAnswers = [];
 
 function askForName() {   
   // TODO 1.1b: Ask for candidate's name //
-    candidateName = input.question("What is your name?");
+    candidateName = input.question("What is your name? ");
 }
 
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
@@ -38,16 +38,13 @@ function gradeQuiz(candidatesAnswersRecieved) {
     
     if (candidatesAnswersRecieved[i].toString().toUpperCase() === correctAnswers[i].toUpperCase()) { 
       finalGrade ++;
-      //console.log(`Way to go, ${candidateName}! The correct answer is ${correctAnswers[i]}`);
-    } 
-    
+    }     
   }
-    
       grade = (finalGrade / questions.length) * 100; 
     if (grade >= 80) {
       console.log(`Congratulations ${candidateName}!\n Your Grade: ${grade}%\n PASS`);
     } else {
-      console.log(`Sorry ${candidateName}!\n Your Grade: ${grade}%\n FAIL`);
+      console.log(`You'll need to try again, ${candidateName}!\n Your Grade: ${grade}%\n FAIL`);
     }
   return grade;
   }
@@ -55,9 +52,9 @@ function gradeQuiz(candidatesAnswersRecieved) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log("Greetings!" + candidateName);
-  let answeresRecieved = askQuestion();
-  gradeQuiz(answeresRecieved);
+   console.log("Greetings, " + candidateName +"! Good luck to you.");
+  let answersRecieved = askQuestion();
+  gradeQuiz(answersRecieved);
   
 }
 
