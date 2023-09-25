@@ -23,7 +23,7 @@ function askForName() {
 function askQuestion() {
   let answers = [];
   for (let i = 0; i < questions.length; i++) {
-      let candidateAnswer = input.question(`${i+1}) ${questions[i]}`);
+      candidateAnswer = input.question(`${i+1}) ${questions[i]}`);
       answers.push(candidateAnswer);
       }
       return answers;
