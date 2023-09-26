@@ -21,20 +21,19 @@ function askForName() {
 
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 function askQuestion() {
-  let answers = [];
+  let answer = [];
   for (let i = 0; i < questions.length; i++) {
-      candidateAnswer = input.question(`${i+1}) ${questions[i]}`);
-      answers.push(candidateAnswer);
+    answer = input.question(`${i+1} ${questions[i]}`);
+    candidateAnswers.push(answer);
       }
-      return answers;
+      return candidateAnswers;
   }
-
 function gradeQuiz(candidatesAnswersRecieved) {
 
   let grade = 0;
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let finalGrade = 0;
-  for (i = 0; i < correctAnswers.length; i++) {
+  for (i = 0; i < questions.length; i++) {
     
     if (candidatesAnswersRecieved[i].toString().toUpperCase() === correctAnswers[i].toUpperCase()) { 
       finalGrade ++;
