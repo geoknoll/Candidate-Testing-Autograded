@@ -27,38 +27,42 @@ function askQuestion() {
     candidateAnswers.push(answer);
       }
       return candidateAnswers;
-  }
-function gradeQuiz(candidatesAnswersRecieved) {
-
-  let grade = 0;
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+}
+function gradeQuiz(candidatesAnswers) {
+  
   let finalGrade = 0;
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+
   for (i = 0; i < questions.length; i++) {
     
-    if (candidatesAnswersRecieved[i].toString().toUpperCase() === correctAnswers[i].toUpperCase()) { 
-      finalGrade ++;
-    }     
+    if (candidatesAnswers[i].toUpperCase() === correctAnswers[i].toUpperCase()) { 
+      finalGrade ++;   
+    } 
+     console.log(`${i+1} ${questions[i]}`);
+     console.log(`You responded with ${candidateAnswers[i]}`);
+     console.log(`Correct answer was actually ${correctAnswers[i]}!`);
   }
-      grade = (finalGrade / questions.length) * 100; 
-    if (grade >= 80) {
-      console.log(`Congratulations ${candidateName}!\n Your Grade: ${grade}%\n PASS`);
+   
+    let grade = (finalGrade / questions.length) * 100; 
+      if (grade >= 80) {
+        console.log(`Congratulations ${candidateName}!\n Your Grade: ${grade}%\n PASS`);
     } else {
-      console.log(`You'll need to try again, ${candidateName}!\n Your Grade: ${grade}%\n FAIL`);
-    }
-  return grade;
-  }
+        console.log(`You'll need to try again, ${candidateName}!\n Your Grade: ${grade}%\n FAIL`);
+      }
+          return grade;   
 
+    }
+  
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
    console.log("Greetings, " + candidateName +"! Good luck to you.");
-  let answersRecieved = askQuestion();
-  gradeQuiz(answersRecieved);
+  askQuestion();
+  gradeQuiz(this.candidateAnswers);
   
 }
 
-runProgram();
- 
+
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
   candidateName: candidateName,
